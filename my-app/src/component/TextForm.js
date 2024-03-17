@@ -49,18 +49,18 @@ export default function TextForm(props) {
     <> 
     <div className="container">
         <div className="mb-3">
-         <h1>{props.heading}</h1>
+        <h3>your text here</h3>
          <textarea className="form-control" value={text} onChange={handleOne} id="myBox" rows="8"></textarea>
          </div>
-         <button className="btn btn-primary mx-2" onClick={upperCase}>convert to upperCase</button>
-         <button className="btn btn-primary mx-2" onClick={lowerCase}>convert to upperCase</button>
-         <button className="btn btn-secondary mx-2" onClick={speak}>Speak</button>
-         <button className="btn btn-primary mx-2" onClick={clear}>Clear</button>
+         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={upperCase}>convert to upperCase</button>
+         <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={lowerCase}>convert to upperCase</button>
+         <button disabled={text.length===0} className="btn btn-secondary mx-2 my-1" onClick={speak}>Speak</button>
+         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={clear}>Clear</button>
     </div>
     <div className="container my-3">
-      <h1>your text here</h1>
-      <p>{text.split(" ").length} words & {text.length} characters</p>
-      <p>{ 0.08 * text.split(" ").length} Minutes to read</p>
+      
+      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words & {text.length} characters</p>
+      <p>{ 0.08 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to read</p>
       <h2>Preview</h2>
       <p>{text}</p>
     </div>

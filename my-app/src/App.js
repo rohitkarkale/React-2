@@ -2,16 +2,16 @@
 // import { useState } from "react";
 import Navbar from "./component/Navbar";
 import TextForm from "./component/TextForm";
-// import Alert from "./component/Alert";
-// import About from "./component/About"
+import Alert from "./component/Alert";
+import About from "./component/About"
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   Routes
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  // Switch,
+  Route,
+  // Link,
+  Routes
+} from "react-router-dom";
 // import logo from "./logo.svg";
 
 
@@ -20,24 +20,24 @@ function App() {
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
      {/* <Navbar title="reactDemo" homeText="newHome" newLink="newLink" select="select"/> */}
       
      <Navbar title="reactDemo" searching ="submit"/>
-     {/* <Alert alert=' You got alert'/> */}
+     <Alert alert=' You got alert'/>
 
      <div className="container my-3" >  
-     <TextForm/>
-     {/* <Routes>
+     
+     <Routes>
               <Route path="/about" element={<About />}> 
               </Route>
 
-     <Route path="/" element={<TextForm/>}> 
-     </Route>  
+               <Route path="/" element={<TextForm/>}> 
+               </Route>  
         
-      </Routes> */}
+      </Routes>
      </div>
-     {/* </Router> */}
+     </Router>
 
     
      
